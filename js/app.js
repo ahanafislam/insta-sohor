@@ -143,10 +143,13 @@ const showPosts = (posts) => {
 };
 
 const displayLikedPosts = () => {
+    const likedContainer = document.getElementById( "liked" );
+    likedContainer.innerHTML = "";
     const likedPosts = getLikedPosts();
+
     likedPosts.forEach((post) => {
         const div = createPost(post);
-        document.getElementById( "liked" ).appendChild(div);
+        likedContainer.appendChild(div);
     });
 };
 
@@ -154,6 +157,7 @@ const displayReportedPosts = () => {
     const reportedContainer = document.getElementById( "reported" );
     reportedContainer.innerHTML = "";
     const reportedPosts = getReportedPosts();
+    
     reportedPosts.forEach((post) => {
         const div = createPost(post);
         reportedContainer.appendChild(div);
